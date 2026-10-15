@@ -58,7 +58,7 @@ local loginOK = (function()
     end
     local function decodeResponse(resp)
         if type(resp)~="string" then return nil end
-        resp = resp:gsub("^"..string.char(239,187,191),""):gsub("^%s+",""):gsub("%s+$","")
+        resp = resp:gsub("^"..string.char(239,187,191),""):gsub("^%s+","":gsub("%s+$",""))
         local ok, data = pcall(function() return HttpService:JSONDecode(resp) end)
         if ok and type(data)=="table" then return data end
         return nil
@@ -107,7 +107,7 @@ local loginOK = (function()
         if type(delfile)~="function" or type(isfile)~="function" then return end
         pcall(function() if isfile(CFG.KEY_FILE) then delfile(CFG.KEY_FILE) end end)
     end
-    local function cleanKey(s) return tostring(s or ""):gsub("%s+","" ):upper() end
+    local function cleanKey(s) return tostring(s or ""):gsub("%s+","":upper()) end
     local function keyLooksValid(k) return k:match("^VTRN%-[A-Z0-9]+%-[A-Z0-9]+$")~=nil end
 
     local function validateRemote(key)
@@ -215,7 +215,4 @@ local loginOK = (function()
     v40.Size = UDim2.new(1,0,0,40); v40.Position = UDim2.new(0,0,0,42)
     v40.BackgroundTransparency = 1; v40.Text = "VETERANO RAGE"
     v40.Font = Enum.Font.GothamBlack; v40.TextSize = 26
-    v40.TextColor3 = Color3.fromRGB(210,180,255); v40.Parent = v28
-
-    local v50 = Instance.new("TextLabel")
-    v50.Size = UDim2.new(1,0,0,20); v50.Position = UDim2.new(0,0,0,82)
+    v40
